@@ -1,14 +1,33 @@
-function Movie(title, director, genre, releaseYear, rating) {
-    this.title = title;
-    this.director = director;
-    this.genre = genre;
-    this.releaseYear = releaseYear;
-    this.rating = rating;
+// function Movie(title, director, genre, releaseYear, rating) {
+//     this.title = title;
+//     this.director = director;
+//     this.genre = genre;
+//     this.releaseYear = releaseYear;
+//     this.rating = rating;
+// }
+//
+// Movie.prototype.getOverview = function () {
+//     return `${this.title} is a ${this.rating} rated ${this.genre} movie directed by ${this.director} released in ${this.releaseYear}`;
+// }
+
+class Movie {
+    constructor(title, director, genre, releaseYear, rating) {
+        this.title = title;
+        this.director = director;
+        this.genre = genre;
+        this.releaseYear = releaseYear;
+        this.rating = rating;
+    }
+
+    getOverview() {
+        return `${this.title} is a ${this.rating} rated ${this.genre} movie directed by ${this.director} released in ${this.releaseYear}`;
+    }
+
+    get overview() {
+        return this.getOverview();
+    }
 }
 
-Movie.prototype.getOverview = function () {
-    return `${this.title} is a ${this.rating} rated ${this.genre} movie directed by ${this.director} released in ${this.releaseYear}`;
-}
 
 const SpiderMan = new Movie("Spiderman", "Sam Raimi", "Action", "2020", "7.9");
 const Avengers = new Movie("Avengers", "Joss Whedon", "Action", "2019", "8.9");
